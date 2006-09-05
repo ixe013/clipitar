@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8,00"
-	Name="clip"
+	Version="8.00"
+	Name="clipitar"
 	ProjectGUID="{34266A1A-815D-4957-A180-EE8CDC0D8BEE}"
+	RootNamespace="clipitar"
 	>
 	<Platforms>
 		<Platform
@@ -71,7 +72,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="shlwapi.lib User32.lib"
-				OutputFile=".\Release/clip.exe"
+				OutputFile=".\Release/clipitar.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				ProgramDatabaseFile=".\Release/clip.pdb"
@@ -160,8 +161,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="shlwapi.lib User32.lib"
-				OutputFile=".\Debug/clip.exe"
-				LinkIncremental="1"
+				OutputFile=".\Debug/clipitar.exe"
+				LinkIncremental="0"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\Debug/clip.pdb"
