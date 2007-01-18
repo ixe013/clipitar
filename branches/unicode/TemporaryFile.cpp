@@ -35,6 +35,8 @@ CTemporaryFile::~CTemporaryFile()
 //----------------------------------------------------------------------
 DWORD CTemporaryFile::Create(const TCHAR *prefix)
 {
+	DWORD result = E_FAIL;
+
 	TCHAR szTempPath[MAX_PATH];
 	TCHAR szTempName[MAX_PATH];
 	
@@ -45,11 +47,14 @@ DWORD CTemporaryFile::Create(const TCHAR *prefix)
 		{
 			UINT olderrormode = SetErrorMode(SEM_FAILCRITICALERRORS);
 			mHandle = CreateFile(szTempName, GENERIC_READ|GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_TEMPORARY|FILE_ATTRIBUTE_NOT_CONTENT_INDEXED|FILE_FLAG_DELETE_ON_CLOSE, NULL);
+
+			result = GetLastError();
+
 			SetErrorMode(olderrormode);
 		}
 	}
 
-	return GetLastError();
+	return result;
 }
 	
 
