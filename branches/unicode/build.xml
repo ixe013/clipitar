@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<project name="Work" default="CleanZIP" basedir=".">
+
+	<target name="CleanZIP">
+		<echo message="${ant.version}"/>
+		<basename property="zipname" file="${user.dir}"/>
+		<!--delete file="${zipname}.zip" quiet="true"/-->
+		<zip zipfile="${zipname}-src.zip" basedir="."
+			excludes="**/www/*.zip, **/Debug*/**, **/Release*/**, **/Unicode*/**, **/*.aps, **/*.clw, **/*.cfp, **/*.obj, **/*.opt, **/*.pch, **/*.dll, **/*.ncb, **/*.i, **/*.idb, **/*.ilk, **/*.pdb, **/*.res, **/*.sup, **/*.scc, **/*.idb, **/*.frx, **/*.tlb, **/*.bin, **/*.exp, **/*.lib, **/*.cpl, **/*.cab, **/*.in2, **/*.map, **/*.trg, **/*.tlh, **/*.tli, **/*.zip" />
+	 </target>
+</project>
